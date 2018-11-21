@@ -45,7 +45,8 @@ router.post('/', async (req, res) => {
         fullName: user.profile.fullName || user.name,
         firstName: user.profile.firstName || '',
         lastName: user.profile.lastName || '',
-        locale: user.profile.locale || ''
+        locale: user.profile.locale || '',
+        picture:  user.profile.picture || ''
       })
       await subscriber.save()
       break

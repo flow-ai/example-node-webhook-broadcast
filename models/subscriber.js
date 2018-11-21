@@ -8,6 +8,7 @@ const SubscriberSchema = new Schema({
   firstName: { type: String },
   lastName: { type: String },
   locale: { type: String },
+  picture: { type: String },
   createdAt: { type: Date, required: true, default: Date.now }
 })
 

@@ -16,7 +16,8 @@ module.exports = async () => {
       fullName,
       firstName,
       lastName,
-      locale
+      locale,
+      picture
     } = subscribers[x]
     
     debug('Sending message to subscriber')
@@ -34,9 +35,10 @@ module.exports = async () => {
           name: fullName,
           profile: {
             fullName: fullName || 'Anonymous',
-            firstName: firstName,
-            lastName: lastName,
-            locale: locale
+            firstName: firstName || undefined,
+            lastName: lastName || undefined,
+            locale: locale || undefined,
+            picture: picture || undefined
           }
         }
       }
