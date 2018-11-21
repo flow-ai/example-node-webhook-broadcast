@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+const _ = require('../cron'),
+      debug = require('debug')('webhook:cron'),
+      mongoose = require('mongoose')
+
+
+/** 
+ * Create and open Database connexction
+ */
+
+debug('Opening database connection')
+
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URI, {
+  reconnectTries: Number.MAX_VALUE
+})
+mongoose.set('useCreateIndex', true)
