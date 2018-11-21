@@ -17,6 +17,7 @@ router.post('/', async (req, res) => {
   debug('Received a new POST request', req.body)
 
   const {
+    threadId,
     action,
     verifyToken,
     replyUrl,
@@ -39,7 +40,7 @@ router.post('/', async (req, res) => {
         user.profile = {}
       }
       const subscriber = new Subscriber({
-        subscriberId: user.userId,
+        subscriberId: threadId,
         replyUrl,
         fullName: user.profile.fullName || user.name,
         firstName: user.profile.firstName || '',
@@ -52,7 +53,7 @@ router.post('/', async (req, res) => {
     case 'OPTOUT_DAILY_UPDATE': {
       debug('Unsubscribing user')
       await Subscriber.findAndDelete({
-        subscriberId: user.userId
+        subscriberId: threadId
       })
       break
     }
