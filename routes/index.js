@@ -39,7 +39,10 @@ router.post('/', async (req, res) => {
         // so we do this to make life easier
         user.profile = {}
       }
-      const subscriber = new Subscriber({
+
+      await Subscriber.findOneAndUpdate({
+        subscriberId: threadId
+      }, {
         subscriberId: threadId,
         replyUrl,
         fullName: user.profile.fullName || user.name,
@@ -47,13 +50,17 @@ router.post('/', async (req, res) => {
         lastName: user.profile.lastName || '',
         locale: user.profile.locale || '',
         picture:  user.profile.picture || ''
+      }, {
+        upsert: true,
+        new: true,
+        setDefaultsOnInsert: true,
+        lean: true
       })
-      await subscriber.save()
       break
     }
     case 'OPTOUT_DAILY_UPDATE': {
       debug('Unsubscribing user')
-      await Subscriber.findAndDelete({
+      await Subscriber.findOneAndDelete({
         subscriberId: threadId
       })
       break
