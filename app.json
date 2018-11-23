@@ -26,6 +26,16 @@
     "mongolab",
     "papertrail"
   ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "hobby"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "hobby"
+    }
+  },
   "buildpacks": [
     {
       "url": "heroku/nodejs"
