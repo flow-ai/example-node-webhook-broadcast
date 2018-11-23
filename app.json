@@ -1,0 +1,34 @@
+{
+  "name": "Flow.ai Webhook Example",
+  "description": "A barebones Node.js app built with Express",
+  "repository": "https://github.com/flowai/example-node-webhook",
+  "logo": "https://flow.ai/assets/images/heroku/logo.svg",
+  "keywords": ["flow.ai", "node", "webhook"],
+  "env": {
+    "CRON_SCHEDULE": {
+      "description": "Time to broadcast (everyday at 12:00)",
+      "value": "0 12 * * *"
+    },
+    "VERIFY_TOKEN": {
+      "description": "Webhook verify token",
+      "value": "Copy and paste from flow.ai dashboard"
+    },
+    "DEBUG": {
+      "description": "View the logs",
+      "value": "webhook:*"
+    },
+    "TZ": {
+      "description": "Server timezone",
+      "value": "Europe/Amsterdam"
+    }
+  },
+  "addons": [
+    "mongolab",
+    "papertrail"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/ruby"
+    }
+  ]
+}
