@@ -1,7 +1,7 @@
 {
   "name": "Flow.ai Webhook Example",
   "description": "A barebones Node.js app built with Express",
-  "repository": "https://github.com/flowai/example-node-webhook",
+  "repository": "https://github.com/flow-ai/example-node-webhook-broadcast",
   "logo": "https://flow.ai/assets/images/heroku/logo.svg",
   "keywords": ["flow.ai", "node", "webhook"],
   "env": {
