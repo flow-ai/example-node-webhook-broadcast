@@ -12,7 +12,7 @@ This example project is created using Nodejs and Express. It demonstrates an eas
 - Go to the [Flow.ai dashboard](https://app.flow.ai)
 - Select actions and create a new Webhook action
 - Copy and paste the *verify token*
-- [Deploy the project to Heroku](https://heroku.com/deploy) and paste the *verify token*
+- [Deploy the project to Heroku](https://heroku.com/deploy?template=https://github.com/flow-ai/example-node-webhook-broadcast) and paste the *verify token*
 
 ### 2. Create flows
 - Go to the [Flow.ai dashboard](https://app.flow.ai)
@@ -32,4 +32,4 @@ This example project is created using Nodejs and Express. It demonstrates an eas
 
 ---
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/flow-ai/example-node-webhook-broadcast)
